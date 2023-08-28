@@ -1,16 +1,18 @@
 import './App.css';
 import styled from "styled-components";
-import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import NavBar from './components/NavBar';
 import IndexPage from './components/IndexPage';
 import MainPage from './components/MainPage';
+import LoginPage from './components/LoginPage';
+import SignUpPage from './components/SignUpPage';
+
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import LoginPage from './components/LoginPage';
+
 function App() {
-  const Navigate = useNavigate();
   const location = useLocation();
 
   const App = styled.div`
@@ -79,6 +81,22 @@ function App() {
                 element={
                   <>
                     <LoginPage style={{ position: "absolute" }}></LoginPage>
+                  </>
+                }
+              />
+              <Route
+                path="/NavBar"
+                element={
+                  <>
+                    <NavBar style={{ position: "absolute" }}></NavBar>
+                  </>
+                }
+              />
+            <Route
+                path="/SignUpPage"
+                element={
+                  <>
+                    <SignUpPage style={{ position: "absolute" }}></SignUpPage>
                   </>
                 }
               />
